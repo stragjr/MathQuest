@@ -3,32 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Quest Game</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>MathQuest</title>
 </head>
 <body>
-    <div id="gameContainer">
-        <div id="startScreen">
-            <h1>Welcome to Math Quest!</h1>
-            <button id="startButton">Start Game</button>
-        </div>
-        <div id="battleScreen" style="display:none;">
-            <h2>Battle!</h2>
-            <div id="question"></div>
-            <input type="text" id="answer" />
-            <button id="submitAnswer">Submit Answer</button>
-        </div>
-        <div id="levelUpScreen" style="display:none;">
-            <h2>Level Up!</h2>
-            <p>Congratulations! You've leveled up!</p>
-            <button id="continueButton">Continue</button>
-        </div>
-        <div id="gameOverScreen" style="display:none;">
-            <h2>Game Over</h2>
-            <p>Thanks for playing!</p>
-            <button id="restartButton">Restart</button>
-        </div>
-    </div>
-    <script src="script.js"></script>
+    <header>
+        <h1>Welcome to MathQuest!</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#story-screen">Story Screen</a></li>
+            <li><a href="#zone-map">Zone Map</a></li>
+            <li><a href="#boss-battles">Boss Battles</a></li>
+            <li><a href="#inventory">Inventory</a></li>
+            <li><a href="#game-screens">Game Screens</a></li>
+        </ul>
+    </nav>
+
+    <section id="story-screen">
+        <h2>Story Screen</h2>
+        <p>Your adventure begins in a world where math holds the key to success!</p>
+    </section>
+
+    <section id="zone-map">
+        <h2>Zone Map</h2>
+        <p>Explore different zones filled with challenges and puzzles.</p>
+    </section>
+
+    <section id="boss-battles">
+        <h2>Boss Battles</h2>
+        <p>Face off against powerful bosses to test your math skills!</p>
+    </section>
+
+    <section id="inventory">
+        <h2>Inventory</h2>
+        <p>Keep track of your items and resources here.</p>
+    </section>
+
+    <section id="game-screens">
+        <h2>Game Screens</h2>
+        <p>Navigate different game screens to enhance your journey.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 MathQuest. All rights reserved.</p>
+    </footer>
 </body>
 </html>
