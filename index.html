@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathQuest RPG - Battle Math Monsters</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Game Container -->
+    <div id="gameContainer" class="game-container">
+        <!-- Start Screen -->
+        <div id="startScreen" class="screen active">
+            <div class="start-content">
+                <h1>⚔️ MathQuest RPG</h1>
+                <p class="tagline">Battle Monsters with Math Skills!</p>
+                <div class="form-group">
+                    <input type="text" id="playerName" placeholder="Enter your name" maxlength="20">
+                    <label>Difficulty:</label>
+                    <select id="difficultySelect">
+                        <option value="easy">Easy (Grades 3-4)</option>
+                        <option value="medium" selected>Medium (Grades 5-6)</option>
+                        <option value="hard">Hard (Grades 7-8)</option>
+                        <option value="expert">Expert (Grades 9+)</option>
+                    </select>
+                </div>
+                <button id="startBtn" class="btn btn-primary">Start Game</button>
+            </div>
+        </div>
+
+        <!-- Battle Screen -->
+        <div id="battleScreen" class="screen">
+            <div class="battle-container">
+                <!-- Player Status -->
+                <div class="player-section">
+                    <div class="player-info">
+                        <h2 id="playerNameDisplay"></h2>
+                        <div class="stat-bar">
+                            <label>HP:</label>
+                            <div class="hp-bar">
+                                <div id="playerHPFill" class="hp-fill"></div>
+                            </div>
+                            <span id="playerHPText">0/0</span>
+                        </div>
+                        <div class="stat-bar">
+                            <label>Level:</label>
+                            <span id="playerLevel">1</span>
+                        </div>
+                        <div class="stat-bar">
+                            <label>EXP:</label>
+                            <div class="exp-bar">
+                                <div id="playerEXPFill" class="exp-fill"></div>
+                            </div>
+                            <span id="playerEXPText">0/100</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enemy Status -->
+                <div class="enemy-section">
+                    <div class="enemy-info">
+                        <h2 id="enemyName"></h2>
+                        <div class="enemy-visual" id="enemyVisual">👹</div>
+                        <div class="stat-bar">
+                            <label>HP:</label>
+                            <div class="hp-bar">
+                                <div id="enemyHPFill" class="hp-fill"></div>
+                            </div>
+                            <span id="enemyHPText">0/0</span>
+                        </div>
+                        <div class="stat-bar">
+                            <label>Level:</label>
+                            <span id="enemyLevel">1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Math Problem Section -->
+            <div class="problem-section">
+                <div class="problem-box">
+                    <p class="problem-text" id="problemText"></p>
+                    <div class="answer-container">
+                        <input type="number" id="answerInput" placeholder="Enter your answer" autocomplete="off">
+                        <button id="submitBtn" class="btn btn-submit">Submit</button>
+                    </div>
+                </div>
+                <div class="feedback" id="feedback"></div>
+            </div>
+
+            <!-- Action Log -->
+            <div class="action-log">
+                <h3>Battle Log</h3>
+                <div id="battleLog" class="log-content"></div>
+            </div>
+        </div>
+
+        <!-- Level Up Screen -->
+        <div id="levelUpScreen" class="screen">
+            <div class="modal-overlay">
+                <div class="modal-content level-up-modal">
+                    <h1>🎉 Level Up!</h1>
+                    <div class="level-up-stats">
+                        <div class="stat-increase">
+                            <span>Level</span>
+                            <span class="old-value" id="oldLevel"></span>
+                            <span class="arrow">→</span>
+                            <span class="new-value" id="newLevel"></span>
+                        </div>
+                        <div class="stat-increase">
+                            <span>Max HP</span>
+                            <span class="old-value" id="oldMaxHP"></span>
+                            <span class="arrow">→</span>
+                            <span class="new-value" id="newMaxHP"></span>
+                        </div>
+                        <div class="stat-increase">
+                            <span>Attack</span>
+                            <span class="old-value" id="oldAttack"></span>
+                            <span class="arrow">→</span>
+                            <span class="new-value" id="newAttack"></span>
+                        </div>
+                    </div>
+                    <button id="nextBattleBtn" class="btn btn-primary">Next Battle</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="screen">
+            <div class="modal-overlay">
+                <div class="modal-content game-over-modal">
+                    <h1 id="gameOverTitle"></h1>
+                    <div class="game-over-stats">
+                        <p>Final Level: <span id="finalLevel"></span></p>
+                        <p>Enemies Defeated: <span id="enemiesDefeated"></span></p>
+                        <p>Total EXP Earned: <span id="totalEXP"></span></p>
+                    </div>
+                    <div class="button-group">
+                        <button id="restartBtn" class="btn btn-primary">Play Again</button>
+                        <button id="menuBtn" class="btn btn-secondary">Main Menu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
